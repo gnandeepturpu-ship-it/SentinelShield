@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SentinelShield Dashboard</title>
+
+    <style>
+
+        body{
+            margin:0;
+            font-family:Arial, sans-serif;
+            background:#001f73;
+            color:white;
+        }
+
+        .container{
+            width:90%;
+            margin:auto;
+            text-align:center;
+            padding-top:30px;
+        }
+
+        h1{
+            color:#00ffff;
+            margin-bottom:30px;
+        }
+
+        .cards{
+            display:flex;
+            justify-content:center;
+            gap:20px;
+            flex-wrap:wrap;
+        }
+
+        .card{
+            background:white;
+            color:black;
+            width:250px;
+            padding:20px;
+            border-radius:10px;
+            box-shadow:0 0 10px rgba(0,0,0,0.3);
+        }
+
+        .card h2{
+            margin:0;
+            color:#001f73;
+        }
+
+        .card p{
+            font-size:28px;
+            font-weight:bold;
+        }
+
+        .alerts{
+            margin-top:40px;
+            background:white;
+            color:black;
+            padding:20px;
+            border-radius:10px;
+        }
+
+        .alerts h2{
+            color:#001f73;
+        }
+
+        .alerts ul{
+            list-style:none;
+            padding:0;
+        }
+
+        .alerts li{
+            padding:10px;
+            border-bottom:1px solid #ddd;
+        }
+
+        table{
+            width:100%;
+            margin-top:20px;
+            border-collapse:collapse;
+            background:white;
+            color:black;
+        }
+
+        table th{
+            background:#00ffff;
+            padding:15px;
+        }
+
+        table td{
+            padding:12px;
+            border-bottom:1px solid #ddd;
+        }
+
+        .buttons{
+            margin-top:30px;
+        }
+
+        .btn{
+            display:inline-block;
+            padding:15px 25px;
+            margin:10px;
+            background:#00ffff;
+            color:black;
+            text-decoration:none;
+            border-radius:8px;
+            font-weight:bold;
+        }
+
+        .logout{
+            background:red;
+            color:white;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>🛡 SentinelShield Dashboard</h1>
+
+    <div class="cards">
+
+        <div class="card">
+            <h2>Total Attacks</h2>
+            <p>{{ total_attacks }}</p>
+        </div>
+
+        <div class="card">
+            <h2>System Status</h2>
+            <p>ACTIVE</p>
+        </div>
+
+        <div class="card">
+            <h2>Protection</h2>
+            <p>ON</p>
+        </div>
+
+    </div>
+
+    <div class="alerts">
+
+        <h2>Attack Statistics</h2>
+
+        {% for stat in stats %}
+            <p>
+                <b>{{ stat[0] }}</b> :
+                {{ stat[1] }}
+            </p>
+        {% endfor %}
+
+    </div>
+
+    <div class="alerts">
+
+        <h2>Recent Alerts</h2>
+
+        <ul>
+            <li>⚠ SQL Injection Attempt Detected</li>
+            <li>⚠ XSS Attack Blocked</li>
+            <li>⚠ Brute Force Login Attempt</li>
+        </ul>
+
+    </div>
+
+    <div class="buttons">
+
+        <a href="/attack_logs" class="btn">
+            View Attack Logs
+        </a>
+
+        <a href="/generate_report" class="btn">
+            Generate Report
+        </a>
+
+        <a href="/logout" class="btn logout">
+
+            Logout
+        </a> 
+
+    </div>
+
+</div>
+
+</body>
+</html>

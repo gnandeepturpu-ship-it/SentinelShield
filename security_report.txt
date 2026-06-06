@@ -1,0 +1,13 @@
+SentinelShield Security Report
+=============================
+
+Total Attacks: 8
+
+(1, 'SQL Injection', "' OR 1=1 --", None)
+(2, 'XSS Attack', "<script>alert('Hacked')</script>", None)
+(3, 'XSS Attack', "<script>alert('Hacked')</script>", None)
+(4, 'Brute Force', 'fghjk exceeded login attempts', 'HIGH')
+(5, 'Brute Force', 'fghjk exceeded login attempts', 'HIGH')
+(6, 'Brute Force', 'sdfg exceeded login attempts', 'HIGH')
+(7, 'Brute Force', 'sdfgh exceeded login attempts', 'HIGH')
+(8, 'Brute Force', 'admin exceeded login attempts', 'HIGH')

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Attack Logs</title>
+
+<style>
+
+body{
+background:#001f73;
+font-family:Arial;
+color:white;
+padding:20px;
+}
+
+table{
+width:100%;
+background:white;
+color:black;
+border-collapse:collapse;
+}
+
+th{
+background:#00ffff;
+padding:15px;
+}
+
+td{
+padding:15px;
+text-align:center;
+}
+
+a{
+background:#00ffff;
+padding:10px 20px;
+text-decoration:none;
+color:black;
+border-radius:5px;
+font-weight:bold;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h1 style="text-align:center;">
+SentinelShield Attack Logs
+</h1>
+
+<a href="/dashboard">Back To Dashboard</a>
+
+<br><br>
+
+<table>
+
+<tr>
+<th>ID</th>
+<th>Attack Type</th>
+<th>Payload</th>
+</tr>
+
+{% for attack in attacks %}
+
+<tr>
+<td>{{ attack[0] }}</td>
+<td>{{ attack[1] }}</td>
+<td>{{ attack[2] }}</td>
+</tr>
+
+{% endfor %}
+
+</table>
+
+</body>
+</html>
