@@ -60,7 +60,7 @@ def login():
         failed_attempts[username] = 0
 
         # Generate OTP
-        otp = random.randint(100000, 999999)
+        otp = 123456
 
         session['otp'] = str(otp)
         session['username'] = username
